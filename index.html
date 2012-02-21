@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<title>JQuery Test Project</title>
+	<meta name="generator" content="BBEdit 8.7" />
+	
+	<script type="text/javascript">
+		//do not execute our code until the document has loaded
+		//wait until it loads body and css
+		$(document).ready(function() {
+			var colors = ["red", "yellow", "orange", "blue", "pink"]; //array
+			var timeToChange = 1000; //number or integer, this is 1 second
+			var currentColor = $("body").css("background-color"); //this line gives the info to this variable 
+			
+			console.log(currentColor); //to test and see what the variables/numbers are
+
+			var clock = function() {
+				console.log("tick");
+				var random = Math.floor(Math.random() *5); //math.random will give us random number between 0 and 1
+				$("body").css("background-color", colors[random]); //jquery to set the color
+				// colors[0] is red
+				// colors[2] is orange
+			}
+			
+			var timer = setInterval(clock, timeToChange);
+		}); 
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
